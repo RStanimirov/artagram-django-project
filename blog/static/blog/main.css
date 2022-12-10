@@ -11,7 +11,7 @@
 
 /* Uncomment below @media settings to activate theme compliance with browser theme */
 /* Light mode */
-@media (prefers-color-scheme: light) {*/
+@media (prefers-color-scheme: light) {
   :root {
       --background: #fafafa;
       --color: #333333;
@@ -65,7 +65,7 @@ ul {
   /*background: var(--background);*/
   background: rgba(227, 227, 227, 0.06);
   padding: 10px 20px;
-  border: 1px solid #66a0b0;  <!-- #dddddd -->
+  border: 1px solid #66a0b0;
   border-radius: 3px;
   margin-bottom: 20px;
 }
