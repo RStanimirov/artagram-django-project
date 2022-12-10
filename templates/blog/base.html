@@ -63,7 +63,7 @@
                     {% endif %}
                 </div>
           </div>
-        <button class="btn btn-outline-info" id="theme-switcher">Theme</button>
+        <!-- <button class="btn btn-outline-info" id="theme-switcher">Theme</button> -->
       </nav>
     </header>
     <!-- Main -->
@@ -93,12 +93,12 @@
                     </form>
               {% endblock searchform %}
               <ul class="list-group">
-                  <li class="list-group-item list-group-item-light"><a href="{% url 'blog-stats' %}">Site statistics</a></li>
-                  <li class="list-group-item list-group-item-light"><a href="{% url 'announcements' %}">Announcements</a></li>
-                  <li class="list-group-item list-group-item-light"><a href="{% url 'rank-system' %}">User rank system</a></li>
-                  <li class="list-group-item list-group-item-light"><a href="{% url 'django-facts' %}">Django facts</a></li>
-                  <li class="list-group-item list-group-item-light"><a href="{% url 'about-author' %}">About the author</a></li>
-              </ul>
+                <li class="list-group-item list-group-item-light"><a href="{% url 'blog-stats' %}">Site statistics</a><small class="text-muted"> (login required)</small></li>
+                <li class="list-group-item list-group-item-light"><a href="{% url 'announcements' %}">Announcements</a><small class="text-muted"> (login required)</small></li>
+                <li class="list-group-item list-group-item-light"><a href="{% url 'rank-system' %}">User rank system</a></li>
+                <li class="list-group-item list-group-item-light"><a href="{% url 'django-facts' %}">Django facts</a></li>
+                <li class="list-group-item list-group-item-light"><a href="{% url 'about-author' %}">About the author</a></li>
+            </ul>
           </div>
         </div>
       <!-- END SIDEBAR -->

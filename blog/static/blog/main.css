@@ -4,27 +4,27 @@
 }
 
 /* Uncomment below [data-theme] to activate the Theme button */
-[data-theme="dark"] {
+/* [data-theme="dark"] {
   --background: #333333;
   --color: #fafafa;
-}
+} */
 
 /* Uncomment below @media settings to activate theme compliance with browser theme */
-/*!* Light mode *!*/
-/*@media (prefers-color-scheme: light) {*/
-/*   :root {*/
-/*       --background: #fafafa;*/
-/*       --color: #333333;*/
-/*   }*/
-/*}*/
+/* Light mode */
+@media (prefers-color-scheme: light) {*/
+  :root {
+      --background: #fafafa;
+      --color: #333333;
+  }
+}
 
-/*!* Dark mode *!*/
-/*@media (prefers-color-scheme: dark) {*/
-/*   :root {*/
-/*       --background: #333333;*/
-/*       --color: #fafafa;*/
-/*   }*/
-/*}*/
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+      --background: #333333;
+      --color: #fafafa;
+  }
+}
 
 body {
   background: var(--background);
