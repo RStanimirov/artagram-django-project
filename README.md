@@ -28,7 +28,7 @@ This project targets an audience of concept artists, designers and visual art en
 
 **- Customized admin section of the site** - the models are displayed not only in the form of a list, but now also in tabular form with set fields, and where applicable, with customized filters and keyword search.
 
-**- Dark theme** - the website is set to comply with the client's custom browser theme.
+**- Light/Dark theme** - the website is set to comply with the client's custom browser theme.
 
 ---
 
@@ -49,7 +49,7 @@ This project targets an audience of concept artists, designers and visual art en
 5. Database: if you want to use SQLite, just uncomment the sqlite3 database code in settings.py; otherwise, in order to use PostgreSQL, you have to setup your own database name, username, password, host, and port. 
 6. Email backend: just to test the app, you normally do not need the EMAIL_BACKEND info (at the bottom of the settings.py), so you can comment it out. However, if you want to be able to send emails through the site's contact form and keep the password reset functionality working, you have to setup your own backend info, smtp server, host and password.
 7. Install the dependencies by running "pip install -r requirements.txt" in yoiur IDE's terminal.
-8. Finally, migrate the model data to the database by running "python manage.py migrate"
+8. Finally, migrate the model data to the database by running "python manage.py migrate" and then start the server by running "python manage.py runserver".
 
 ---
 
