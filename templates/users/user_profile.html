@@ -1,0 +1,26 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block content %}
+    <div class="content-section">
+      <div class="media">
+        <img class="rounded-circle account-img" src="{{ requested_user.profile.image.url }}" alt="user profile image">
+        <div class="media-body">
+            <p class="text-secondary">Note: you are viewing this profile because you are a logged-in user.</p>
+            <h2 class="account-heading">{{ requested_user.username }}</h2>
+            {% if requested_user.profile.user_role %}
+                <p class="text-secondary"><strong>User role:</strong> {{ requested_user.profile.user_role }}</p>
+            {% endif %}
+{#            <p class="text-secondary">{{ requested_user.email }}</p>#}
+            {% if requested_user.first_name and requested_user.last_name %}
+                <p class="text-secondary"><strong>Full name:</strong> {{ requested_user.first_name }} {{ requested_user.last_name }}</p>
+            {% else %}
+                <p>This user has not provided a full name yet.</p>
+            {% endif %}
+            <p class="text-secondary"><strong>Bio:</strong> {{ requested_user.profile.bio }}</p>
+            <p class="text-secondary"><strong>Date joined:</strong> {{ requested_user.date_joined|date}}</p>
+            <p><strong>Total number of posts:</strong> ({{ total_user_posts }}) - <a href="{% url 'user-posts' requested_user.username %}">view all user posts.</a></p>
+            <p style="float: left"><strong>User rank:</strong> "{{ user_rank }}" <img src="{{ rank_image }}" alt="user rank image"></p>
+        </div>
+      </div>
+    </div>
+{% endblock content %}

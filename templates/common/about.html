@@ -1,0 +1,27 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+    <h3>About Artagram Django Project</h3>
+    <p>A note from the site's author (RS):</p>
+        <p>This website is the result of my Django project work during SoftUni's DjangoWeb module.
+        It is created for the art community as a forum where users can interact with other people
+        interested in Concept art, Graphic design and Art in general. I named this site <strong>Artagram</strong> because
+        I thought the name should evoke the art theme it is devoted to. It is a Django project, i.e. it was developed with
+        the Django web framework.</p>
+    <p>The site's users can do the following things:</p>
+    <ul>
+        <li>Post artworks along with description and text. The logged-in users can update or delete their own content anytime.</li>
+        <li>The user can view other users' posts and artworks, and if logged-in, comment on them, like and/or dislike them.</li>
+        <li>Furthermore, the logged-in user can view a filtered list of all posts by a given user-author.</li>
+        <li><strong>Special feature:</strong> Artagram has implemented a user rank system which endows the user
+            with a status and icon based on their activity. More info can be found <a href="{% url 'rank-system' %}">here</a>.</li>
+    </ul>
+    <br>
+     <h3>Technical specifications:</h3>
+    <ul>
+        <li>Framework for creation of the website: Django</li>
+        <li>Database: PostgreSQL</li>
+        <li>Forms enhancer: Crispy forms</li>
+        <li>Images plugin: Pillow</li>
+    </ul>
+
+{% endblock content %}

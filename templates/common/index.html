@@ -1,0 +1,25 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block content %}
+    <!-- Masthead-->
+    <header class="masthead bg-steel-home text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <img class="image-background" src="{% static 'blog/icons/1585325-600px.jpg' %}" alt="colour-splash-image">
+            <!-- Masthead Avatar Image-->
+            <img class="masthead-avatar mb-5" style="position: absolute" src="{% static 'blog/icons/Artagram-logo-cover-colour-600px.png' %}" alt="Artagram-logo-box"/>
+            <!-- Masthead Heading-->
+            <h1 class="masthead-heading text-uppercase mb-0" style="color: #1d8b9f">Welcome to Artagram</h1>
+            <!-- Masthead Subheading-->
+            <p class="masthead-subheading font-weight-light mb-0" style="color: #1d8b9f"><strong>made for the Concept Artist - Web Designer - Illustrator</strong></p>
+        </div>
+    </header>
+    <br>
+    <p><strong>Artagram</strong> is an art-blog website developed by the aspiring Python web developer
+        and concept artist Rumen Stanimirov (whom you can address simply by 'RS').
+        You can view more info about the author of this site <a href="{% url 'about-author' %}">here.</a></p>
+
+    More info about the website can be found in the <a href="{% url 'about-website' %}">About</a> section and also in the Sideboard section.
+    Please note that some of this website's content is available only to logged-in users, such as the user profile infos, site statistics, and announcements.
+
+{% endblock content %}

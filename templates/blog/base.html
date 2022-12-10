@@ -1,0 +1,130 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Static Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
+
+    <!-- Javascript light/dark theme snippet -->
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function(event) {
+            document.documentElement.setAttribute("data-theme", "light");
+            var themeSwitcher = document.getElementById("theme-switcher");
+            themeSwitcher.onclick = function() {
+                var currentTheme = document.documentElement.getAttribute("data-theme");
+                var switchToTheme = currentTheme === "dark" ? "light" : "dark"
+                document.documentElement.setAttribute("data-theme", switchToTheme);
+                }
+            });
+    </script>
+    {% if title %}
+        <title>Artagram - {{ title }}</title>
+    {% else %}
+        <title>Artagram</title>
+    {% endif %}
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+        <div class="container">
+            <img src="{% static 'blog/icons/Artagram-logo-splash.png' %}">
+            <a class="navbar-brand mr-4" style="color: #17a2b8" href="{% url 'blog-home' %}">Artagram's Blog</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarToggle">
+            <div class="navbar-nav mr-auto">
+                <a class="nav-item nav-link" href="{% url 'index' %}">Home</a>
+                <a class="nav-item nav-link" href="{% url 'about-website' %}">About</a>
+                <a class="nav-item nav-link" href="{% url 'contact' %}">Contact</a>
+            </div>
+              <!-- Navbar Right Side -->
+                <div class="navbar-nav">
+                    {% if user.is_authenticated %}
+                        <a class="nav-item nav-link" style="color: #17a2b8"><strong>Welcome {{ user }}</strong></a>
+                        <a class="nav-item nav-link" href="{%  url 'post-create' %}">New Artwork</a>
+                        <a class="nav-item nav-link" href="{%  url 'profile' %}">Profile</a>
+                        <a class="nav-item nav-link" href="{%  url 'logout' %}">Logout</a>
+                            {% if user.is_superuser or user.is_staff %}
+                                <a class="nav-item nav-link" href="{%  url 'admin:index' %}">Admin Panel</a>
+                            {% endif %}
+                    {% else %}
+                      <a class="nav-item nav-link" href="{%  url 'login' %}">Login</a>
+                      <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+                    {% endif %}
+                </div>
+          </div>
+        <button class="btn btn-outline-info" id="theme-switcher">Theme</button>
+      </nav>
+    </header>
+    <!-- Main -->
+    <main role="main" class="container">
+      <div class="row">
+        <div class="col-md-8">
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+            {% block content %}{% endblock %}
+        </div>
+      <!-- SIDEBAR -->
+        <div class="col-md-4">
+          <div class="content-section">
+            <h3>Sideboard</h3>
+              <p class='text-muted'>Some items in this section can be viewed only by logged-in users.</p>
+              {% block searchform %}
+                  <form class="SearchBar" action="{% url 'search-posts' %}" method="get">
+                      <input name="p" type="text" placeholder="Search posts.." />
+                      <button class="btn my-0 my-sm-0 ml-0" type="submit">
+                        <strong style="color: #32a0c4">Search</strong>
+                      </button>
+                    </form>
+              {% endblock searchform %}
+              <ul class="list-group">
+                  <li class="list-group-item list-group-item-light"><a href="{% url 'blog-stats' %}">Site statistics</a></li>
+                  <li class="list-group-item list-group-item-light"><a href="{% url 'announcements' %}">Announcements</a></li>
+                  <li class="list-group-item list-group-item-light"><a href="{% url 'rank-system' %}">User rank system</a></li>
+                  <li class="list-group-item list-group-item-light"><a href="{% url 'django-facts' %}">Django facts</a></li>
+                  <li class="list-group-item list-group-item-light"><a href="{% url 'about-author' %}">About the author</a></li>
+              </ul>
+          </div>
+        </div>
+      <!-- END SIDEBAR -->
+      </div>
+    </main>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <br>
+    <footer id=copyright>
+        <div style="position: center">
+            <p><img src="{% static 'blog/icons/Artagram-logo-splash-small.png' %}"><strong>Artagram Django Project</strong>  © 2022</p>
+        </div>
+        <div>
+            <small class="text-muted">DISCLAIMER: This site was created for two reasons:
+                1. For educational purposes in order to verify the author's skills in writing a blog-based Django website,
+                and 2. For the sake of setting up a concept for a forum dedicated to the art community where the users can discuss art.
+                Being still in development, this website will hopefully be a field of many improvements in the future, including the site's name,
+                until it achieves the status of a fully-functional app. Even at this early stage of development, this website aims to be a medium for
+                a positive-minded discussion and would not welcome any inappropriate content. In this regard, the author cannot take responsibility for
+                the site content. The users should also check locally if they are eligible to use this website. No part of this site can be distributed
+                without the written permission of the author.
+            </small>
+        </div>
+    </footer>
+</body>
+</html>

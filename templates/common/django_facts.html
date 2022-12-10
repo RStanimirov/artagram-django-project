@@ -1,0 +1,19 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+    <h3>What is Django ?</h3>
+        <div>
+            <p>
+                Django is an open-source Python-based web framework that helps to build web applications.
+                This very website was developed with Django.
+                The popularity of this framework increased rapidly in the last couple of years.
+                Compare to other Python-based frameworks like Flask and Pyramid, the Django framework is far
+                most popular among Python developers. It supports both Python 2.7+ versions and Python 3.x versions.
+            </p>
+        </div>
+    <br>
+    <div>
+        <img src="{% static 'blog/django-stats.png' %}">
+    </div>
+    <small>source:trends.google.com</small>
+{% endblock content %}

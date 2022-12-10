@@ -1,0 +1,27 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+    <h3>User Rank system</h3>
+    <p>A special feature in this website is the implemented user rank system.
+        When the users get registered, they start at the entry level - "Apprentice".
+        The more posts they publish, the faster they climb on the rank ladder of Artagram. The available ranks are as follows:</p>
+    <br>
+    <p>I. <strong>"Apprentice"</strong> is the initial basic rank and is given this badge: </p><img src="{% static 'blog/icons/rank-1.png' %}" alt="rank-1" align="middle" hspace="4" vspace="4">
+    <small style="position: absolute">*The user gets the "Apprentice" rank upon registration. When the user creates more than 3 posts,
+        the rank is upgraded to "Artisan".</small>
+    <br>
+    <br>
+    <p>II. <strong>"Artisan"</strong> is the next rank above "Apprentice" and is given this badge: </p><img src="{% static 'blog/icons/rank-2.png' %}" alt="rank-2" align="middle" hspace="4" vspace="4">
+    <small style="position: absolute">*The user gets the "Artisan" rank when the user creates more than 3 posts. When the posts reach 8,
+        the rank is upgraded to "Craftsman".</small>
+    <br>
+    <br>
+    <p>III. <strong>"Craftsman"</strong> is the next rank above "Artisan" and is given this badge: </p><img src="{% static 'blog/icons/rank-3.png' %}" alt="rank-3" align="middle" hspace="4" vspace="4">
+    <small style="position: absolute">*The user gets the "Craftsman" rank when the user creates 8 posts. When the posts grow above 15,
+        the rank is upgraded to "Master".</small>
+    <br>
+    <br>
+    <p>IV. <strong>"Master"</strong> is the highest rank in the Artagram rank system. It is above "Craftsman" and is given this badge: </p><img src="{% static 'blog/icons/rank-4.png' %}" alt="rank-4" align="middle" hspace="4" vspace="4">
+    <small style="position: absolute">* The user gets the "Master" rank when the user creates 15 posts. The "Master" rank is the highest rank in the Artagram rank system.</small>
+    <br>
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <h3>Contact the admin</h3>
+    <p class="text-secondary">If the sending process takes too long, please refresh the page.
+       If that does not help, please contact the admins at art.admin@mail.bg.</p>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <div class="form-actions">
+          <button type="submit">Send</button>
+        </div>
+    </form>
+{% endblock content %}
+

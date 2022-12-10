@@ -1,0 +1,165 @@
+:root {
+  --background: #fafafa;
+  --color: #333333  ;
+}
+
+/* Uncomment below [data-theme] to activate the Theme button */
+[data-theme="dark"] {
+  --background: #333333;
+  --color: #fafafa;
+}
+
+/* Uncomment below @media settings to activate theme compliance with browser theme */
+/*!* Light mode *!*/
+/*@media (prefers-color-scheme: light) {*/
+/*   :root {*/
+/*       --background: #fafafa;*/
+/*       --color: #333333;*/
+/*   }*/
+/*}*/
+
+/*!* Dark mode *!*/
+/*@media (prefers-color-scheme: dark) {*/
+/*   :root {*/
+/*       --background: #333333;*/
+/*       --color: #fafafa;*/
+/*   }*/
+/*}*/
+
+body {
+  background: var(--background);
+  color: var(--color);
+  margin-top: 5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color);
+}
+
+ul {
+  margin: 0;
+}
+
+.bg-steel {
+  background-color: #262424;
+}
+
+.bg-steel-home {
+  background-color: transparent;
+
+}
+
+.site-header .navbar-nav .nav-link {
+  color: #cbd5db;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+
+.content-section {
+  /*background: var(--background);*/
+  background: rgba(227, 227, 227, 0.06);
+  padding: 10px 20px;
+  border: 1px solid #66a0b0;  <!-- #dddddd -->
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.article-title {
+  color: var(--color);
+}
+
+a.article-title:hover {
+  color: #428bca;
+  text-decoration: none;
+}
+
+.article-content {
+  white-space: pre-line;
+}
+
+.article-img {
+  height: 65px;
+  width: 65px;
+  margin-right: 16px;
+}
+
+.article-metadata {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3
+}
+
+.article-metadata a:hover {
+  color: #e3e3e3;
+  text-decoration: none;
+}
+
+.article-svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+.account-heading {
+  font-size: 2.5rem;
+}
+
+.list-group-item {
+  background: var(--background);
+  color: var(--color);
+}
+
+.masthead .masthead-avatar {
+    width: 520px;
+    height: 232px;
+}
+
+.masthead {
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+.image-background{
+  opacity: 0.5%;
+  background-size: cover;
+  /*object-fit: cover;*/
+  position: relative;
+  width: 85%;
+  height: 17.5rem;
+}
+
+.SearchBar {
+     position: relative;
+}
+
+.SearchBar input {
+     height: 30px;
+     width: 10rem;
+}
+
+footer {
+	width: 95%;
+	height: 5%;
+	position: relative;
+	bottom: 5%;
+	padding: 1%;
+}
+
+#copyright {
+	bottom: 5%;
+	text-align: center;
+    font-size: small;
+}

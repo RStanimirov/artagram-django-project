@@ -1,0 +1,31 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+    <h3>About the Author</h3>
+    <p>In this section you can view a brief intro about the author of the site.</p>
+    <div>
+    <![if !vml]><img width=235 height=296
+    src="{% static 'blog/rs.jpg' %}" alt="" align=left hspace=12><![endif]><b
+    style='mso-bidi-font-weight:normal'>Rumen Stanimirov (RS)</b> is a concept
+    artist who is completing his studies in Software engineering with Python at
+    SoftUni. His goal is to unite the visual arts with computer code, and as a
+    result, offer a melting pot where various creative projects can be produced,
+    from computer games to AI generated art.
+        <br>
+        <br>
+    <p class=MsoNormal>In his free time RS is a keen mountaineer, loves painting with
+    oils on canvases and is always on the alert to take a shot of nature’s beauty
+    with his digital camera.
+    </p>
+
+    <![if !vml]><img width=24 height=24
+    src="{% static 'blog/artstation.png' %}" alt="" align=center hspace=12><![endif]><small>https://www.artstation.com/rstanimirov</small>
+        <br>
+    <![if !vml]><img width=24 height=24
+    src="{% static 'blog/github.png' %}" alt="" align=center hspace=12><![endif]><small>https://github.com/RStanimirov</small>
+    <br>
+    <p class=MsoNormal><span style='mso-spacerun:yes'> </span><span
+    style='mso-spacerun:yes'> </span></p>
+    </div>
+
+{% endblock content %}

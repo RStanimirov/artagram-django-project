@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+    <h3>Site statistics</h3>
+      <p>This art-blog has the following record counts:</p>
+      <ul>
+          <li>Posts: ({{ all_posts }})</li>
+          <li>Users: ({{ all_authors }})</li>
+          <li>Comments: ({{ all_comments }})</li>
+      </ul>
+        <br>
+        <p><small>*The data is dynamic and is being computed in real time.
+            As soon as a new post or comment is made, the records change.</small></p>
+    <div>
+        <img src="{% static 'blog/stat_animation.gif' %}" alt="statistics bars">
+    </div>
+{% endblock content %}

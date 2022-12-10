@@ -1,0 +1,31 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="content-section">
+      <div class="media">
+        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+        <div class="media-body">
+            <h2 class="account-heading">{{ user.username }}</h2>
+            <p class="text-secondary">{{ user.email }}</p>
+            {% if user.profile.user_role %}
+                <p class="text-secondary"><strong>User role: </strong>{{ user.profile.user_role }}</p>
+            {% endif %}
+            <p class="text-secondary"><strong>Date joined:</strong> {{ user.date_joined|date }}</p>
+            <p class="text-secondary"><strong>Last login:</strong> {{ user.last_login }}</p>
+            <p class="text-secondary"><strong>Total posts:</strong> ({{ total_posts }}), <strong>User rank:</strong> "{{ user_rank }}" <img src="{{ rank_image }}" alt="user rank image"></p>
+        </div>
+      </div>
+      <!-- FORM HERE -->
+        <form method="POST" enctype="multipart/form-data">
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Profile Info</legend>
+                {{ u_form|crispy }}
+                {{ p_form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                {% csrf_token %}
+                <button class="btn btn-outline-info" type="submit">Update Profile</button>
+            </div>
+        </form>
+    </div>
+{% endblock content %}
