@@ -37,6 +37,7 @@ This project targets an audience of concept artists, designers and visual art en
 - Backend: Django Web Framework
 - Frontend: HTML5, CSS (Bootstrap4, Crispy Forms, Custom CSS), JavaScript
 - Database: PostgreSQL
+- Deployment: pythonanywhere (see deployment link below)
 
 ---
 
@@ -53,7 +54,7 @@ This project targets an audience of concept artists, designers and visual art en
 
 ---
 
-The app is deployed and running at [Markdown Guide](https://artadmin.pythonanywhere.com)
+The app is deployed and running at [https://artadmin.pythonanywhere.com](https://artadmin.pythonanywhere.com)
 
 ---
 
