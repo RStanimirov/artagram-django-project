@@ -53,5 +53,9 @@ This project targets an audience of concept artists, designers and visual art en
 
 ---
 
+The app is deployed and running at [Markdown Guide](https://artadmin.pythonanywhere.com)
+
+---
+
 Co. Artagram Django Project 2022
 
