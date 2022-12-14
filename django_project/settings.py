@@ -151,7 +151,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# RS: after login, the user wil be redirected to the home page, so we need to override the built-in paths:
+# RS: after login, the user will be redirected to the home page:
 LOGIN_REDIRECT_URL = 'index'
 LOGIN_URL = 'login'
 
