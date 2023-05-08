@@ -41,6 +41,12 @@ This project targets an audience of concept artists, designers and visual art en
 
 ---
 
+### Inspiration:
+
+- I was inspired by Corey Schaffer's excellent Django blog tutorials which were a great help! https://github.com/CoreyMSchafer/code_snippets/tree/master/Django_Blog
+
+---
+
 ### How to setup and test this app:
 
 1. Download the code and unzip it.
