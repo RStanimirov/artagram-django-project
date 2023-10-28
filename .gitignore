@@ -139,5 +139,5 @@ dmypy.json
 cython_debug/
 
 # Project folders
-.media/artworks/
-.media/profile_pics/
+artagram-django-project/media/artworks/
+artagram-django-project/media/profile_pics/
