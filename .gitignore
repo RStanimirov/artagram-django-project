@@ -138,3 +138,6 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
+# Project folders
+.media/artworks/
+.media/profile_pics/
