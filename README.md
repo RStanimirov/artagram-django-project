@@ -59,8 +59,7 @@ This app is MIT licensed. I have indicated in the MIT license my major contribut
 7. Email backend: just to test the app, you normally do not need the EMAIL_BACKEND info (at the bottom of the settings.py), so you can leave it commented out. However, if you want to be able to send emails through the site's contact form and keep the password reset functionality working, you have to setup your own backend info, smtp server, host and password. 
 8. Finally, migrate the model data to the database by running "python manage.py migrate" and then start the server by running "python manage.py runserver".
 
-**DEV NOTE** as of Oct 2023: the app's dependencies were tested to be fully compatible with Python 3.7.0 which was the version used during the app's development.
-
+**DEV NOTE** as of Oct 2023:
 I have recently tested the app with the latest Python 3.12 and found that psycopg2 v2.9.5 was no longer supported, so I commented it out in the requirements file. Also Pillow v9.3.0 could not be installed on Python 3.12, so I included Pillow version 9.5.0 which ran fine.    
 
 ---
@@ -69,5 +68,5 @@ The app is deployed and running at [https://artadmin.pythonanywhere.com](https:/
 
 ---
 
-Co. Artagram Django Project 2022
+Artagram Django Project, 2022
 
